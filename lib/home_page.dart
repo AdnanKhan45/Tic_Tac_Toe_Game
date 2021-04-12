@@ -162,12 +162,13 @@ class _HomePageState extends State<HomePage> {
       if (playerTurn && displaySomething[index] == "") {
         displaySomething[index] = "$playerO";
         failedBoxes += 1;
+        playerTurn = false;
       } else if (!playerTurn && displaySomething[index] == "") {
         displaySomething[index] = "$playerX";
         failedBoxes += 1;
+        playerTurn = true;
       }
 
-      playerTurn = !playerTurn;
       _checkWinner();
     });
   }
